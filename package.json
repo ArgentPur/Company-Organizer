@@ -1,0 +1,22 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "package",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArgentPur/Company-Organizer.git"
+  },
+  "keywords": [
+    "organizer"
+  ],
+  "author": "Zachary_Lynn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArgentPur/Company-Organizer/issues"
+  },
+  "homepage": "https://github.com/ArgentPur/Company-Organizer#readme"
+}
