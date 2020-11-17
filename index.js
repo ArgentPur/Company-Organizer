@@ -99,7 +99,7 @@ async function viewStaffByDepartment() {
 async function viewStaffByManager() {
     const managers = await db.findAllStaff();
     const managerChoice = managers.map(({id, first_Name, last_Name}) => ({
-        name: `${firstName} ${lastName}`,
+        name: `${first_Name} ${last_Name}`,
         value: id,
     }))
     const {managerId} = await prompt([
@@ -121,10 +121,25 @@ async function viewStaffByManager() {
     runPrompts();
 };
 
+async function addEmployee() {
+    const roles = await db.findAllRoles();
+    const staff = await db.findAllStaff();
+    const employee = await prompt([
+        {
+            name: "first_Name",
+            message: "Enter first name of employee"
+        },
+        {
+            name: "first_Name",
+            message: "Enter last name of employee"
+        }
+    ])
+};
+
 async function removeEmployee() {
     const staff = await db.findAllStaff();
     const employeeChoice = staff.map(({id, firstName, lastName}) => ({
-        name: `${firstName} ${lastName}`,
+        name: `${first_Name} ${last_Name}`,
         value: id
     }));
     const {employeeId} = await prompt([
@@ -139,3 +154,8 @@ async function removeEmployee() {
     console.log("Employee has been removed.");
     runPrompts();
 };
+
+function quit() {
+    console.log("Closing Application");
+    process.exit();
+}
