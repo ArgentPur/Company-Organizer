@@ -41,14 +41,31 @@ async function runPrompts() {
                 },
                 {
                     name: "Quit",
-                    value: "Quit",
+                    value: "QUIT",
                 }
             ]
         }
-    ])
+    ]);
+
+    switch (choice) {
+        case "VIEW_STAFF":
+            return viewStaff();
+        case "VIEW_STAFF_BY_DEPARTMENT":
+            return viewStaffByDepartment();
+        case "VIEW_STAFF_BY_MANAGER":
+            return viewStaffByManager();
+        case "ADD_EMPLOYEE":
+            return addEmployee();
+        case "REMOVE_EMPLOYEE":
+            return removeEmployee();
+        default:
+            return quit();                    
+    }
 };
 
-async function viewEmployees(){
+
+
+async function viewStaff(){
     const employees = await db.findAllStaff();
     console.log("\n");
     console.table(employees);
