@@ -68,6 +68,15 @@ async function runPrompts() {
 async function viewStaff(){
     const employees = await db.findAllStaff();
     console.log("\n");
-    console.table(employees);
+    console.table(staff);
     runPrompts();
+};
+
+async function viewStaffByDepartment() {
+    const departments = await db.findAllStaff();
+    const departmentChoice = departments.map(({id, name}) => ({
+        name: name,
+        value: id,
+    }));
+
 }
