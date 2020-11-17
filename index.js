@@ -13,7 +13,39 @@ function init() {
 };
 
 async function runPrompts() {
-    const {choice} = await prompt({})
+    const {choice} = await prompt([
+        {
+            type: "list",
+            name: "choice",
+            message: "Select an option to begin.",
+            choices: [
+                {
+                    name: "View Staff Directory",
+                    value: "VIEW_STAFF"
+                },
+                {
+                    name: "View staff by department",
+                    value: "VIEW_STAFF_BY_DEPARTMENT",
+                },
+                {
+                    name: "View staff by manager",
+                    value: "VIEW_STAFF_BY_MANAGER",
+                },
+                {
+                    name: "Add Staff Member",
+                    value: "ADD_EMPLOYEE",
+                },
+                {
+                    name: "Remove Staff Member",
+                    value: "REMOVE_EMPLOYEE",
+                },
+                {
+                    name: "Quit",
+                    value: "Quit",
+                }
+            ]
+        }
+    ])
 };
 
 async function viewEmployees(){
