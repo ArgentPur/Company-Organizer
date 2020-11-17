@@ -121,3 +121,21 @@ async function viewStaffByManager() {
     runPrompts();
 };
 
+async function removeEmployee() {
+    const staff = await db.findAllStaff();
+    const employeeChoice = staff.map(({id, firstName, lastName}) => ({
+        name: `${firstName} ${lastName}`,
+        value: id
+    }));
+    const {employeeId} = await prompt([
+        {
+            type: "list",
+            name: "employeeId",
+            message: "Select an employee to remove",
+            choices: employeeChoice
+        }
+    ]);
+    await db.removeEmployee(employeeId);
+    console.log("Employee has been removed.");
+    runPrompts();
+};
