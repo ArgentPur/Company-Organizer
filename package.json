@@ -15,6 +15,11 @@
   ],
   "author": "Zachary_Lynn",
   "license": "ISC",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^7.3.3",
+    "mysql": "^2.18.1"
+  },
   "bugs": {
     "url": "https://github.com/ArgentPur/Company-Organizer/issues"
   },
