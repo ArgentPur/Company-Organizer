@@ -21,4 +21,8 @@ INSERT INTO employee
   (first_name, last_name, role_id, manager_id)
 
 VALUES   
-  ("Zach, Lynn", 1, 1) 
+  ("Zach, Lynn", 1, 1),
+  ("Mike, Flynn", 1, 1),
+  ("Lynn, Smith", 2, 1),
+  ("Tom, Stuart", 3, 1),
+  ("Zach, Schmidt", 4, 1),    
