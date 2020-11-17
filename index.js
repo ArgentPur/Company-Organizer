@@ -96,4 +96,28 @@ async function viewStaffByDepartment() {
 
 };
 
+async function viewStaffByManager() {
+    const managers = await db.findAllStaff();
+    const managerChoice = managers.map(({id, first_Name, last_Name}) => ({
+        name: `${firstName} ${lastName}`,
+        value: id,
+    }))
+    const {managerId} = await prompt([
+        {
+            type: "list",
+            name: "managerId",
+            message: "Select an employee to view information",
+            choices: managerChoice
+        }
+    ])
+    const staff = await db.findAllStaffByManager(managerId);
+    console.log("\n");
+
+    if (staff.length === 0) {
+        console.log("No information available");
+    }else {
+        console.table(staff);
+    }
+    runPrompts();
+};
 
