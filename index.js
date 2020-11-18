@@ -66,7 +66,7 @@ async function runPrompts() {
 
 
 async function viewStaff(){
-    const employees = await db.findAllStaff();
+    const staff = await db.findAllStaff();
     console.log("\n");
     console.table(staff);
     runPrompts();
@@ -130,8 +130,19 @@ async function addEmployee() {
             message: "Enter first name of employee"
         },
         {
-            name: "first_Name",
+            name: "last_Name",
             message: "Enter last name of employee"
+        },
+        {
+            name: "role",
+            message: "Select role",
+            choices: roles
+        },
+        {
+            name: "manager",
+            message: "Select manager",
+            choices: staff
+
         }
     ])
 };
