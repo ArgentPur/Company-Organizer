@@ -22,7 +22,6 @@ INSERT INTO employee
 
 VALUES   
   ("Zach, Lynn", 1, 1),
-  ("Mike, Flynn", 1, 1),
   ("Lynn, Smith", 2, 1),
   ("Tom, Stuart", 3, 1),
-  ("Zach, Schmidt", 4, 1),    
+   

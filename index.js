@@ -134,18 +134,20 @@ async function addEmployee() {
             message: "Enter last name of employee"
         },
         {
-            name: "role",
+            name: "role_id",
             message: "Select role",
             choices: roles
         },
         {
-            name: "manager",
+            name: "manager_id",
             message: "Select manager",
             choices: staff
 
         }
     ])
+    await db.createEmployee(employee);
 };
+
 
 async function removeEmployee() {
     const staff = await db.findAllStaff();
