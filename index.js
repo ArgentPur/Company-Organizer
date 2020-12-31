@@ -151,7 +151,7 @@ async function addEmployee() {
 
 async function removeEmployee() {
     const staff = await db.findAllStaff();
-    const employeeChoice = staff.map(({id, firstName, lastName}) => ({
+    const employeeChoice = staff.map(({id, first_Name, last_Name}) => ({
         name: `${first_Name} ${last_Name}`,
         value: id
     }));
