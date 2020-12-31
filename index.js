@@ -146,6 +146,7 @@ async function addEmployee() {
         }
     ])
     await db.createEmployee(employee);
+    init();
 };
 
 
